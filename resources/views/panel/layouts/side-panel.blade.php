@@ -123,7 +123,9 @@
                     <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{is_active('exam/main')}}"><a href=" {{route('panel.exam.main')}}"><i class="fa fa-angle-left"></i> الرئيسيه </a></li>
+                    <li class="{{is_active('exam/main')}}"><a href="{{route('panel.exam.main')}} "><i class="fa fa-angle-left"></i> الرئيسيه </a></li>
+                    <li class="{{is_active('exam/main')}}"><a href=" {{route('panel.exam.create')}}"><i class="fa fa-angle-left"></i> اضافه جديد </a></li>
+                    <li class="{{is_active('exam/main')}}"><a href=" "><i class="fa fa-angle-left"></i> عرض الكل </a></li>
 
                     {{--<li class="{{is_active('material/create')}}"><a href="{{route('panel.exam.create')}}"><i class="fa fa-angle-left"></i> إضافة جديد </a></li>--}}
                 </ul>
