@@ -16,4 +16,8 @@ class ExamController extends Controller
     public function create(){
 
     }
+
+    public function viewall(){
+
+}
 }

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d6a6e3d-648b-44a3-b046-604bd7a53488" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/panel/exam/all.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Panel/ExamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Panel/ExamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/panel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -102,20 +105,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="panel.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="panel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/panel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+            <state relative-caret-position="227">
+              <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="side-panel.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="side-panel.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="125" column="94" selection-start-line="125" selection-start-column="94" selection-end-line="125" selection-end-column="94" />
+            <state relative-caret-position="187">
+              <caret line="125" column="141" selection-start-line="125" selection-start-column="141" selection-end-line="125" selection-end-column="141" />
             </state>
           </provider>
         </entry>
@@ -132,6 +135,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FacultyController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Panel/FacultyController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/panel/exam/main.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -144,8 +156,8 @@
       <file leaf-file-name="ExamController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Panel/ExamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-end-line="12" />
+            <state relative-caret-position="306">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -255,10 +267,10 @@
         <option value="$PROJECT_DIR$/resources/views/panel/material/fac-selectors.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/panel/exam/all.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Panel/MaterialController.php" />
-        <option value="$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php" />
         <option value="$PROJECT_DIR$/public/panel/js/fac-selectors.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Panel/ExamController.php" />
         <option value="$PROJECT_DIR$/routes/panel.php" />
+        <option value="$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php" />
       </list>
     </option>
   </component>
@@ -494,12 +506,12 @@
       <workItem from="1537146801164" duration="282000" />
       <workItem from="1537147091006" duration="1399000" />
       <workItem from="1537256213429" duration="9829000" />
-      <workItem from="1537338327081" duration="16604000" />
+      <workItem from="1537338327081" duration="17599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156849000" />
+    <option name="totallyTimeSpent" value="157844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -748,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Panel/FacultyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/panel/faculty/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -841,24 +846,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Panel/ExamController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Panel/FacultyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-end-line="12" />
+        <state relative-caret-position="297">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Panel/ExamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="125" column="94" selection-start-line="125" selection-start-column="94" selection-end-line="125" selection-end-column="94" />
+        <state relative-caret-position="306">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+        <state relative-caret-position="227">
+          <caret line="115" column="39" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel/layouts/side-panel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="125" column="141" selection-start-line="125" selection-start-column="141" selection-end-line="125" selection-end-column="141" />
         </state>
       </provider>
     </entry>

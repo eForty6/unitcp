@@ -113,19 +113,20 @@ Route::prefix('material')->group(function (){
 
 
 Route::prefix('exams')->group(function (){
-    Route::get('all',['as'=>'panel.exam.index','uses'=>'ExamController@index']);
+    Route::get('all',['as'=>'panel.exam.all','uses'=>'ExamController@index']);
+    Route::get('all',['as'=>'panel.exam.all','uses'=>'ExamController@viewall']);
 //    Route::get('all/data',['as'=>'panel.material.all.data','uses'=>'MaterialController@get_material_data_table']);
 
     Route::prefix('/create')->group(function () {
-        Route::get('/', ['as' => 'panel.material.create', 'uses' => 'MaterialController@create']);
-        Route::get('/', ['as' => 'panel.material.create', 'uses' => 'MaterialController@create']);
-        Route::post('/',['as' => 'panel.material.create', 'uses' =>'MaterialController@store']);
+        Route::get('/', ['as' => 'panel.exam.create', 'uses' => 'ExamController@create']);
+
+        Route::post('/',['as' => 'panel.exam.create', 'uses' =>'ExamController@store']);
     });
-    Route::delete('/delete/{id}', ['as' => 'panel.material.delete', 'uses' => 'MaterialController@delete']);
+    Route::delete('/delete/{id}', ['as' => 'panel.exam.delete', 'uses' => 'ExamController@delete']);
 
     Route::prefix('/edit')->group(function () {
-        Route::get('/{material}', ['as' => 'panel.material.edit', 'uses' => 'MaterialController@edit']);
-        Route::put('/{material}', ['as' => 'panel.material.edit', 'uses' => 'MaterialController@update']);
+        Route::get('/{exam}', ['as' => 'panel.exam.edit', 'uses' => 'ExamController@edit']);
+        Route::put('/{exam}', ['as' => 'panel.exam.edit', 'uses' => 'ExamController@update']);
     });
 
 });
