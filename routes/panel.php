@@ -113,7 +113,7 @@ Route::prefix('material')->group(function (){
 
 
 Route::prefix('exams')->group(function (){
-    Route::get('all',['as'=>'panel.exam.all','uses'=>'ExamController@index']);
+    Route::get('all',['as'=>'panel.exam.main','uses'=>'ExamController@main']);
     Route::get('all',['as'=>'panel.exam.all','uses'=>'ExamController@viewall']);
 //    Route::get('all/data',['as'=>'panel.material.all.data','uses'=>'MaterialController@get_material_data_table']);
 

@@ -8,11 +8,14 @@ use App\Http\Controllers\Controller;
 class ExamController extends Controller
 {
     public function index(){
+        return view('panel.exam.main');
+    }
 
+    public function main(){
         return view('panel.exam.main');
 
-
     }
+
     public function create(){
 
     }

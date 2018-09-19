@@ -25,7 +25,7 @@
 
                         <fieldset class="form-group">
                             <label>اسم الكليه </label>
-                            <select class="form-control" select name="faculty" data-placeholder="إختيار الكليه" required>
+                            <select class="form-control" select name="faculty_id" data-placeholder="إختيار الكليه" required>
                                 <option disabled selected hidden>إختيار الكليه</option>
                                 @if(isset($items) && $items->count() > 0)
                                     @foreach($items as $item)

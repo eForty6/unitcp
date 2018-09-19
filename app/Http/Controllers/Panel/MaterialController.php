@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Material;
 use App\Faculty;
+use App\classes;
+use DB;
 use Yajra\DataTables\DataTables;
 use App\Http\Requests\CreateMaterial;
 
@@ -26,11 +28,11 @@ class MaterialController extends Controller
 
 //        dd($id);
         $classes = classes::where("faculty_id",$id)->get();
-        $department = DB::table("department")->where("faculty_id",$id)->get();
+        $department = DB::table("departments")->where("faculty_id",$id)->get();
         $classes = DB::table("classes")->where("faculty_id",$id)->get();
         $materials = DB::table("materials")->where("faculty_id",$id)->get();
         $semesters = DB::table("semesters")->where("faculty_id",$id)->get();
-        $member = DB::table("members")->where("faculty_id",$id)->get();
+
         $year = DB::table("year")->get();
 
         $data = ["classes"=>$classes,"department"=>$department,"materials"=>$materials,"semesters"=>$semesters,
@@ -47,7 +49,7 @@ class MaterialController extends Controller
 
         $material = Material::create($request->all());
 
-        return (isset($material)) ? $this->response_api(true, 'تم إضافة قسم جديد بنجاح') : $this->response_api(false, 'حدث خطأ غير متوقع');
+        return (isset($material)) ? $this->response_api(true, 'تم إضافة ماده دراسيه بنجاح') : $this->response_api(false, 'حدث خطأ غير متوقع');
     }
 
 
@@ -69,7 +71,7 @@ class MaterialController extends Controller
 
     public function delete($id)
     {
-        $item = department::find($id);
+        $item = Material::find($id);
         return (isset($item) && $item->delete()) ? $this->response_api(true, 'تمت عملية الحذف بنجاح') : $this->response_api(false, 'حدث خطأ غير متوقع');
     }
 
@@ -85,8 +87,8 @@ class MaterialController extends Controller
 
             })->addColumn('action', function ($item) {
                 return '<div class="row">
-                      <a  title="Edit" style="margin-right: 10px"  href="' . lang_route('panel.department.edit', ['id' => $item->id]) . '"  class="btn btn-sm btn-primary edit" > <i style="margin-left: 3px" class="fa fa-check-square-o"></i> تعديل</a>
-                      <a  data-toggle="reject" title="Delete" style="margin-right: 10px;background-color: #FA2A00;color:white"  data-url="' . admin_url('department/delete/' . $item->id) . '"   class="btn btn-sm btn-danger delete">  <i style="margin-left:3px" class="fa  fa-trash-o"></i> حذف </a>
+                      <a  title="Edit" style="margin-right: 10px"  href="' . lang_route('panel.material.edit', ['id' => $item->id]) . '"  class="btn btn-sm btn-primary edit" > <i style="margin-left: 3px" class="fa fa-check-square-o"></i> تعديل</a>
+                      <a  data-toggle="reject" title="Delete" style="margin-right: 10px;background-color: #FA2A00;color:white"  data-url="' . admin_url('material/delete/' . $item->id) . '"   class="btn btn-sm btn-danger delete">  <i style="margin-left:3px" class="fa  fa-trash-o"></i> حذف </a>
                     </div>';
             })->rawColumns([ 'action'])->make(true);
         } catch (\Exception $e) {

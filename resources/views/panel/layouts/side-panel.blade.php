@@ -123,26 +123,11 @@
                     <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{is_active('service/all')}}"><a href=" {{route('panel.exam.all')}}"><i class="fa fa-angle-left"></i> الرئيسيه </a></li>
+                    <li class="{{is_active('exam/main')}}"><a href=" {{route('panel.exam.main')}}"><i class="fa fa-angle-left"></i> الرئيسيه </a></li>
 
-                    <li class="{{is_active('material/create')}}"><a href="{{route('panel.material.create')}}"><i class="fa fa-angle-left"></i> إضافة جديد </a></li>
+                    {{--<li class="{{is_active('material/create')}}"><a href="{{route('panel.exam.create')}}"><i class="fa fa-angle-left"></i> إضافة جديد </a></li>--}}
                 </ul>
             </li>
-
-
-            {{--<li class="treeview {{is_element_active('/album/i')}}">--}}
-                {{--<a href="#">--}}
-                    {{--<i class="ti-gallery"></i>--}}
-                    {{--<span>مستودع الامتحانات </span>--}}
-                    {{--<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu">--}}
-                    {{--<li class="{{is_active('service/all')}}"><a href="{{route('panel.exam.index')}}"><i class="fa fa-angle-left"></i> الرئيسيه </a></li>--}}
-                    {{--<li class="{{is_active('material/create')}}"><a href="{{route('panel.exam.create')}}"><i class="fa fa-angle-left"></i> إضافة جديد </a></li>--}}
-                    {{--<li class="{{is_active('service/all')}}"><a href=" {{route('panel.exam.all')}}"><i class="fa fa-angle-left"></i> عرض الكل </a></li>--}}
-                {{--</ul>--}}
-
-            {{--</li>--}}
 
 
             <li class="treeview {{is_element_active('/album/i')}}">
@@ -152,7 +137,7 @@
                     <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{is_active('material/create')}}"><a href=""><i class="fa fa-angle-left"></i> الرئيسيه </a></li>
+                    <li class="{{is_active('main')}}"><a href=""><i class="fa fa-angle-left"></i> الرئيسيه </a></li>
                     <li class="{{is_active('material/create')}}"><a href=""><i class="fa fa-angle-left"></i> إضافة جديد </a></li>
                     <li class="{{is_active('service/all')}}"><a href=" "><i class="fa fa-angle-left"></i> عرض الكل </a></li>
                 </ul>

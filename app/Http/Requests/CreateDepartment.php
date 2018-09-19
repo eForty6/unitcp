@@ -30,6 +30,7 @@ class CreateDepartment extends FormRequest
             'name_ar'=> 'required',
 
 
+
         ];
     }
 }

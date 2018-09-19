@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('select[name="faculty"]').on('change', function(){
+    $('select[name="faculty_id"]').on('change', function(){
 
         // alert('test');
         var facultyId = $(this).val();
@@ -20,7 +20,7 @@ $(document).ready(function() {
 
             });
         } else {
-            $('select[name="classes"]').empty();
+            // $('select[name="classes"]').empty();
         }
 
     });
