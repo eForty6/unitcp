@@ -6,20 +6,24 @@ use Illuminate\Http\Request;
 use App\Logic\FileRepository;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
-
+use App\Http\Controllers\Controller;
+use Storage;
 class Filecontroller extends Controller
 {
-    protected $file;
+  /*  protected $file;
 
     public function __construct(FileRepository $fileRepository)
     {
         $this->file = $fileRepository;
-    }
+    }*/
 
     public function uploadFile() {
-        $file = Input::all();
-        $response = $this->file->upload($file, 'file');
-        return $response;
+       /* $file = Input::all();
+        $response = $this->file->uploadFile($file, 'file');
+        return $response;*/
+
+       $file = request()->file('file')->store('faculty/exams/'.request('facid'));
+       return Storage::url($file);
     }
 
 

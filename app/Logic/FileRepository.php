@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Logic\FileRepository;
+//use App\Logic\FileRepository;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 
-class Filecontroller extends Controller
+class FileRepository extends Controller
 {
     protected $file;
 
-    public function __construct(FileRepository $fileRepository)
+    public function __construct($fileRepository)
     {
         $this->file = $fileRepository;
     }

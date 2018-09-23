@@ -7,6 +7,7 @@ use App\Faculty;
 
 class Department extends Model
 {
+
     protected $fillable=[
         'id','faculty_id','name_en','name_ar'
     ];

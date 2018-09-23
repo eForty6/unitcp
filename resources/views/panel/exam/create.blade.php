@@ -27,11 +27,11 @@
 
                         <fieldset class="form-group">
                             <label>اسم الكليه </label>
-                            <select class="form-control" select name="faculty_id" data-placeholder="إختيار الكليه" required>
+                            <select class="form-control faculty" select name="faculty_id" data-placeholder="إختيار الكليه" required>
                                 <option disabled selected hidden>إختيار الكليه</option>
                                 @if(isset($items) && $items->count() > 0)
                                     @foreach($items as $item)
-                                        {{$items}}
+
                                         <option value="{{$item->id}}" >{{get_text_locale($item,'name_ar')}}</option>
                                     @endforeach
                                 @endif
@@ -45,7 +45,7 @@
 
 
                         <input type="hidden" id="exam_file_name" name="fexam">
-                        <div id="fileuploader">Upload</div>
+                        <div id="fileuploader" class="hidden">Upload</div>
 
 
 
@@ -81,16 +81,25 @@
         <script>
             $(document).ready(function()
             {
-                $("#fileuploader").uploadFile({
-                    url:"/file/upload",
-                    multiple:false,
-                    dragDrop:false,
-                    formData: { _token: '{{csrf_token()}}' },
-                    maxFileCount:1,
-                    fileName:"file",
-                    onSuccess:function(files,data,xhr,pd)
+                $(document).on('change','.faculty',function () {
+                    var cid = $('.faculty option:selected').val();
+                    if(cid  > 0)
                     {
-                        $('#exam_file_name').val(data.file_name);
+
+                        $('#fileuploader').removeClass('hidden');
+
+                        $("#fileuploader").uploadFile({
+                            url:"{{url('admin/file/upload')}}",
+                            multiple:false,
+                            dragDrop:false,
+                            formData: { _token: '{{csrf_token()}}',facid:cid },
+                            maxFileCount:1,
+                            fileName:"file",
+                            onSuccess:function(files,data,xhr,pd)
+                            {
+                                $('#exam_file_name').val(data.file_name);
+                            }
+                        });
                     }
                 });
             });
