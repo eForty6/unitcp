@@ -29,7 +29,8 @@
       "App\\": "app/"
     },
     "files": [
-      "app/Logic/helper.php"
+      "app/Logic/helper.php",
+      "app/Logic/FileRepository.php"
     ]
   },
   "autoload-dev": {

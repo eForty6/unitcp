@@ -111,7 +111,11 @@ Route::prefix('material')->group(function (){
 
 //*******************Exams*****************
 
-
+Route::prefix('/file')->group(function () {
+    Route::post('/upload', ['as' => 'panel.file.upload', 'uses' => 'FileController@uploadFile']);
+    Route::post('/delete', ['as' => 'panel.file.delete', 'uses' => 'FileController@delete_file']);
+    Route::get('/{id}', 'FileController@get_file');
+});
 
 Route::prefix('exam')->group(function (){
     Route::get('main',['as'=>'panel.exam.main','uses'=>'ExamController@main']);

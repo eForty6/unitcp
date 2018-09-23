@@ -4,7 +4,9 @@
     array_push($breadcrumb_array,collect(['is_last'=>false,'name'=>'مستودع الامتحانات','link'=> lang_route('panel.material.all')]));
 @endphp
 @extends('panel.layouts.index',['sub_title'=>'مستودع الامتحانات' ,'breadcrumb_array'=> $breadcrumb_array])
+
 @section('main')
+    <link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
     @push('panel_css')
         {!! HTML::style('panel/css/jasny-bootstrap.min.css') !!}
         {!! HTML::style('panel/plugins/summernote/summernote-bs4.css') !!}
@@ -41,14 +43,11 @@
                             @include('panel.material.fac-selectors')
                         </div>
 
-                        <fieldset class="form-group">
-                            <label>الأسم</label>
-                            <input type="hidden" id="exam_file_name" name="fexam">
-                            <div id="fileuploader">Upload</div>
 
-                            <button type="submit" class="btn btn-primary upload-file" style="margin-top:10px">Submit
-                            </button>
-                        </fieldset>
+                        <input type="hidden" id="exam_file_name" name="fexam">
+                        <div id="fileuploader">Upload</div>
+
+
 
 
 
@@ -76,6 +75,28 @@
     @endpush
 
     @push('panel_js')
+
+        {{--</script>--}}
+        <script src="http://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js"></script>
+        <script>
+            $(document).ready(function()
+            {
+                $("#fileuploader").uploadFile({
+                    url:"/file/upload",
+                    multiple:false,
+                    dragDrop:false,
+                    formData: { _token: '{{csrf_token()}}' },
+                    maxFileCount:1,
+                    fileName:"file",
+                    onSuccess:function(files,data,xhr,pd)
+                    {
+                        $('#exam_file_name').val(data.file_name);
+                    }
+                });
+            });
+        </script>
+
+
 
         {!! HTML::script('panel/js/jasny-bootstrap.min.js') !!}
         {!! HTML::script('panel/js/jasny.js') !!}

@@ -18,4 +18,5 @@ return array(
     'f18cc91337d49233e5754e93f3ed9ec3' => $vendorDir . '/laravelcollective/html/src/helpers.php',
     '0b47d6d4a00ca9112ba3953b49e7c9a4' => $vendorDir . '/yajra/laravel-datatables-oracle/src/helper.php',
     '11268a0a7639c238cba84e27f3341243' => $baseDir . '/app/Logic/helper.php',
+    '13f5dc701f2e8365eb7996e16084d649' => $baseDir . '/app/Logic/FileRepository.php',
 );
