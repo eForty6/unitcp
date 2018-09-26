@@ -118,12 +118,13 @@ Route::prefix('/file')->group(function () {
 });
 
 Route::prefix('exam')->group(function (){
+    Route::get('all',['as'=>'panel.exam.all','uses'=>'ExamController@index']);
     Route::get('main',['as'=>'panel.exam.main','uses'=>'ExamController@main']);
 
 
     Route::prefix('/create')->group(function () {
         Route::get('/', ['as' => 'panel.exam.create', 'uses' => 'ExamController@create']);
-        Route::get('getData/{id}', ['as' => 'panel.exam.create', 'uses' => 'ExamController@getData']);
+        Route::get('getExamData/{id}', ['as' => 'panel.exam.create', 'uses' => 'ExamController@getExamData']);
         Route::post('/',['as' => 'panel.exam.create', 'uses' =>'ExamController@store']);
     });
     Route::delete('/delete/{id}', ['as' => 'panel.exam.delete', 'uses' => 'ExamController@delete']);

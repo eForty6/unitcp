@@ -22,7 +22,10 @@ class CreateMaterialsTable extends Migration
             $table->string('name_en');
             $table->timestamps();
             $table->softDeletes();
+
+			$table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
         });
+
     }
 
     /**

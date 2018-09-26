@@ -20,6 +20,9 @@ class CreateTeacherMaterialsTable extends Migration
             $table->integer('material_id')->unsigned()->index();
             $table->timestamps();
             $table->softDeletes();
+
+            //$table->foreign('faculty_id')->referances('id')->on('faculties')->onDelete('cascade');
+			$table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
         });
     }
 

@@ -20,6 +20,8 @@ class CreateDepartmentsTable extends Migration
             $table->string('name_ar');
             $table->timestamps();
             $table->softDeletes();
+
+			$table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
         });
     }
 

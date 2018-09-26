@@ -17,3 +17,4 @@
 {!! HTML::script('/panel/js/sweetalert2.all.min.js') !!}
 {!! HTML::script('/panel/js/custom.sweet.js') !!}
 {!! HTML::script('/panel/js/fac-selectors.js') !!}
+{!! HTML::script('/panel/js/exam-selectors.js') !!}

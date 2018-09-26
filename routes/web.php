@@ -47,3 +47,6 @@ Route::get('repaire',function(){
         $update->save();
     }
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

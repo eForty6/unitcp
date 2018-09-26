@@ -33,10 +33,10 @@ class MaterialController extends Controller
         $materials = DB::table("materials")->where("faculty_id",$id)->get();
         $semesters = DB::table("semesters")->where("faculty_id",$id)->get();
 
-        $year = DB::table("year")->get();
+//        $year = DB::table("year")->get();
 
         $data = ["classes"=>$classes,"department"=>$department,"materials"=>$materials,"semesters"=>$semesters,
-            "year" => $year];
+            ];
 
         $view =view('panel.material.fac-selectors', $data)->render();
 

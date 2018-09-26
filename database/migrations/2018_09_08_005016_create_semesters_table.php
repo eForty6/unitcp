@@ -20,6 +20,9 @@ class CreateSemestersTable extends Migration
             $table->string('name_ar');
             $table->timestamps();
             $table->softDeletes();
+
+            //$table->foreign('faculty_id')->referances('id')->on('faculties')->onDelete('cascade');
+			$table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
         });
     }
 

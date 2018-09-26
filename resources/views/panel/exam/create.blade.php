@@ -13,10 +13,9 @@
     @endpush
 
     <div class="content">
-        {!! Form::open(['id'=>'form','method'=>'POST','url'=>route('panel.material.create'),'to'=>route('panel.material.all')]) !!}
+        {!! Form::open(['id'=>'form','method'=>'POST','url'=>route('panel.exam.create'),'to'=>route('panel.exam.main')]) !!}
         <div class="row">
             <div class="col-md-8">
-                {{--<input type="hidden" id="photo" name="image" value="{{$post->image}}">--}}
                 <div class="card">
                     <div class="card-body">
 
@@ -27,7 +26,7 @@
 
                         <fieldset class="form-group">
                             <label>اسم الكليه </label>
-                            <select class="form-control faculty" select name="faculty_id" data-placeholder="إختيار الكليه" required>
+                            <select class="form-control faculty" name="faculty" data-placeholder="إختيار الكليه" id="faculty_id" required>
                                 <option disabled selected hidden>إختيار الكليه</option>
                                 @if(isset($items) && $items->count() > 0)
                                     @foreach($items as $item)
@@ -40,15 +39,12 @@
 
 
                         <div id="selectors_div">
-                            @include('panel.material.fac-selectors')
+                            @include('panel.exam.exam-selectors')
                         </div>
 
 
                         <input type="hidden" id="exam_file_name" name="fexam">
                         <div id="fileuploader" class="hidden">Upload</div>
-
-
-
 
 
                     </div>
@@ -83,6 +79,7 @@
             {
                 $(document).on('change','.faculty',function () {
                     var cid = $('.faculty option:selected').val();
+                    event.preventDefault();
                     if(cid  > 0)
                     {
 

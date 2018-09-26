@@ -62,6 +62,11 @@ function get_semester_data()
     return \App\Semester::all();
 }
 
+function get_year_data()
+{
+    return \App\Year::all();
+}
+
 function ajax_render_view($view, $data)
 {
     try {

@@ -18,11 +18,13 @@ class CreateExamsTable extends Migration
             $table->integer('faculty_id')->unsigned()->index();
             $table->integer('class_id')->unsigned()->index();
             $table->integer('semester_id')->unsigned()->index();
+            $table->integer('department_id')->unsigned()->index();
             $table->integer('year_id')->unsigned()->index();
             $table->integer('file_id')->unsigned()->index();
-            $table->integer('views_num');
+            $table->integer('views_num')->nullable();
             $table->timestamps();
             $table->softDeletes();
+			$table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
         });
     }
 
