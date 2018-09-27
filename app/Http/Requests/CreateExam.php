@@ -25,7 +25,7 @@ class CreateExam extends FormRequest
     {
         return [
 
-            'faculty_id'=> 'required',
+            'faculty'=> 'required',
 
 
         ];

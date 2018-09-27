@@ -20,7 +20,7 @@ class CreateExamsTable extends Migration
             $table->integer('semester_id')->unsigned()->index();
             $table->integer('department_id')->unsigned()->index();
             $table->integer('year_id')->unsigned()->index();
-            $table->integer('file_id')->unsigned()->index();
+            $table->string('file');
             $table->integer('views_num')->nullable();
             $table->timestamps();
             $table->softDeletes();
