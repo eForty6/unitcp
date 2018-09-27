@@ -6,8 +6,8 @@
 @extends('panel.layouts.index',['sub_title'=>'مستودع الامتحانات' ,'breadcrumb_array'=> $breadcrumb_array])
 
 @section('main')
-    <link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
     @push('panel_css')
+    <link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
         {!! HTML::style('panel/css/jasny-bootstrap.min.css') !!}
         {!! HTML::style('panel/plugins/summernote/summernote-bs4.css') !!}
     @endpush
@@ -44,7 +44,9 @@
 
 
                         <input type="hidden" id="exam_file_name" name="fexam">
-                        <div id="fileuploader" class="hidden">Upload</div>
+                        <div id="fileuploader" class="hidden">
+						<input type="file" name="file">
+						</div>
 
 
                     </div>
@@ -66,13 +68,15 @@
 
     </div>
 
-    @push('top_js')
-        {!! HTML::script(asset('/js/app.js')) !!}
-    @endpush
 
     @push('panel_js')
 
-        {{--</script>--}}
+		{!! HTML::script('panel/js/jasny-bootstrap.min.js') !!}
+        {!! HTML::script('panel/js/jasny.js') !!}
+        {!! HTML::script('panel/plugins/summernote/summernote-bs4.js') !!}
+        {!! HTML::script('/panel/js/post.js') !!}
+		{!! HTML::script(asset('/js/app.js')) !!}
+		
         <script src="http://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js"></script>
         <script>
             $(document).ready(function()
@@ -85,7 +89,7 @@
 
                         $('#fileuploader').removeClass('hidden');
 
-                        $("#fileuploader").uploadFile({
+                        /*$("#fileuploader").uploadFile({
                             url:"{{url('admin/file/upload')}}",
                             multiple:false,
                             dragDrop:false,
@@ -96,7 +100,7 @@
                             {
                                 $('#exam_file_name').val(data.file_name);
                             }
-                        });
+                        });*/
                     }
                 });
             });
@@ -104,10 +108,7 @@
 
 
 
-        {!! HTML::script('panel/js/jasny-bootstrap.min.js') !!}
-        {!! HTML::script('panel/js/jasny.js') !!}
-        {!! HTML::script('panel/plugins/summernote/summernote-bs4.js') !!}
-        {!! HTML::script('/panel/js/post.js') !!}
+        
 
     @endpush
 @stop

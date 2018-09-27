@@ -18,7 +18,7 @@ class CreateFilesTable extends Migration
             $table->string('display_name');
             $table->string('file_name');
             $table->string('mime_type');
-            $table->float('size')->nullable();
+            $table->unsignedMediumInteger('size')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

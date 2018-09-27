@@ -18,7 +18,8 @@ class CreateMaterialsTable extends Migration
             $table->integer('faculty_id')->unsigned()->index();
             $table->integer('class_id')->unsigned()->index();
             $table->integer('semester_id')->unsigned()->index();
-            $table->string('name');
+            $table->integer('department_id')->unsigned()->index();
+            $table->string('name_ar');
             $table->string('name_en');
             $table->timestamps();
             $table->softDeletes();
