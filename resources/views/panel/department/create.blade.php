@@ -13,7 +13,7 @@
     @endpush
 
     <div class="content">
-        {{--{!! Form::open(['id'=>'form','url'=>admin_url('department/create'),'to'=>route('panel.department.all')]) !!}--}}
+    
 
         {!! Form::open(['id'=>'form','method'=>'POST','url'=>route('panel.department.create'),'to'=>route('panel.department.all')]) !!}
         <div class="row">

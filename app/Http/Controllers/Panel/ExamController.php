@@ -55,8 +55,54 @@ class ExamController extends Controller
     public function store(CreateExam $request)
     {
         //dd($request->all());
+		//dd(\App\File::$rules);
+		$validator = Validator::make(
+		$request->all(),
+		\App\File::$rules,
+		\App\File::$messages);
+        if ($validator->fails()) {
+            return Response::json([
+                'error' => true,
+                'message' => $validator->messages()->first(),
+            ], 400);
+        }
+//        TODO :: File its an object of request
 
-        $exam = Exam::create($request->all());
+        $fileRequeste = $request->file('file');
+        $file_size = $fileRequeste->getClientSize();
+        $extension = $fileRequeste->getClientOriginalExtension();
+        $allowed_filename = 'file_'.time().mt_rand().'.'.$extension;	
+		
+        $fileStatus = $fileRequeste->storeAs('faculty/exams/'.request('facid'),$allowed_filename);
+		
+        $originalName = str_replace('.'.$extension, '', $fileRequeste->getClientOriginalName());
+		
+        if( !$fileStatus ) {
+            return Response::json([
+                'error' => true,
+                'message' => 'حدثت مشكلة في الخادم أثناء رفع الملفات',
+            ], 500);
+        }
+        $fileModule = new \App\File;
+        $fileModule->display_name = $originalName.'.'.$extension;
+        $fileModule->file_name = $allowed_filename;
+        $fileModule->mime_type = $extension;
+        $fileModule->size = $file_size;
+        $fileModule->save();
+		
+		//Save Exam
+	
+		$exam = new Exam;
+		$exam->faculty_id 		= $request->get('faculty');
+		$exam->class_id 		= $request->get('class_id');
+		$exam->department_id 	= $request->get('department_id');
+		$exam->semester_id 		= $request->get('semester_id');
+		$exam->year_id 			= $request->get('year_id');
+		$exam->file 			= $fileModule->file_name;
+		$exam->save();
+		
+		
+        //$exam = Exam::create($request->all());
         return (isset($exam)) ? $this->response_api(true, 'تم الأضافة بنجاح') : $this->response_api(false, 'حدث خطأ غير متوقع');
     }
 
