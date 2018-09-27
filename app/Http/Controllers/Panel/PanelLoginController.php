@@ -27,14 +27,30 @@ class PanelLoginController extends Controller
 
         return view('panel.login');
     }
+//
+//    public function login(Request $request)
+//    {
+//        $this->validate($request, [
+//            'email' => 'required|email',
+//            'password' => 'required|min:3'
+//        ]);
+//        $credentials = ['email' => $request->email, 'password' => $request->password];
+//        if (Auth::guard()->attempt($credentials, $request->has('remember'))){
+//
+//            return redirect()->route('panel.dashboard');
+//        }
+//        session()->flash('response', __('البيانات المدخلة غير صحيحة'));
+//        return redirect()->back();
+//    }
+
 
     public function login(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
+            'username' => 'required|min:3',
             'password' => 'required|min:3'
         ]);
-        $credentials = ['email' => $request->email, 'password' => $request->password];
+        $credentials = ['username' => $request->username, 'password' => $request->password];
         if (Auth::guard()->attempt($credentials, $request->has('remember'))){
 
             return redirect()->route('panel.dashboard');
@@ -42,7 +58,6 @@ class PanelLoginController extends Controller
         session()->flash('response', __('البيانات المدخلة غير صحيحة'));
         return redirect()->back();
     }
-
 
 
 

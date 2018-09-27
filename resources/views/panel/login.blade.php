@@ -29,13 +29,22 @@
                     <span class="text-center" style="margin-left: 35px;">  {{session()->get('response')}} </span>
                 </div>
             @endif
+            {{--<div class="wrap-input100 validate-input" data-validate="الرجاء أدخل بريد إلكتروني صحيح">--}}
+                {{--<input class="input100" type="text" name="email" placeholder="البريد الإلكتروني">--}}
+                {{--<span class="focus-input100"></span>--}}
+                {{--<span class="symbol-input100">--}}
+							{{--<i class="fa fa-envelope" aria-hidden="true"></i>--}}
+						{{--</span>--}}
+            {{--</div>--}}
+
             <div class="wrap-input100 validate-input" data-validate="الرجاء أدخل بريد إلكتروني صحيح">
-                <input class="input100" type="text" name="email" placeholder="البريد الإلكتروني">
+                <input class="input100" type="text" name="username" placeholder="البريد الإلكتروني">
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</span>
             </div>
+
 
             <div class="wrap-input100 validate-input" data-validate="كلمة المرور مطلوبة">
                 <input class="input100" type="password" name="password" placeholder="كلمة المرور">
